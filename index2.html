@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DogShop</title>
+
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Edu+AU+VIC+WA+NT+Arrows&family=Neucha&family=Pangolin&family=Rubik+Mono+One&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Neucha", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(white,#A6FFF0,white,#A6FFF0);
+}
+.light-theme {
+  background: linear-gradient(white,#A6FFF0,white,#A6FFF0);
+ 
+}
+.dark-theme {
+  background: rgb(138, 138, 138);
+  
+  
+}
+.dark-theme2 {
+  background: rgb(132, 132, 132);
+}
+.polosa{
+  background-color: red;
+  height: 5px;
+  position: fixed;
+  
+
+}
+.polosa2{
+  background-color: greenyellow;
+  height: 5px;
+  position: fixed;
+}
+footer {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #3dd;
+    font-size: 30px;
+    bottom: 100px;
+    right: 100px;
+    border-radius:100%;
+    opacity: 0;
+    transition: opacity 1s;   
+}
+
+.vis {
+    opacity: 1;
+}
+.cvet{
+  color: #3dd;
+  text-decoration: dashed;
+}
+
+nav {
+  margin: auto;
+  background-color: #f6f6f6;
+  position: fixed;
+  text-align: center;
+  top: 0px;
+  left: 0;
+  right: 0;
+  border: 2px black solid;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 1.2em;
+}
+
+a > li {
+    margin: 0 50px;
+    transition: all 0.5s;
+}
+
+.main {
+  width: 760px;
+  padding: 20px;
+  margin: 80px auto 0px;
+  background-color: #ffffff;
+  
+}
+
+img {
+  width: 200px;
+  display: block;
+  margin: auto;
+}
+
+nav > .first_img {
+    height: 300px;
+    margin: auto;
+    width: auto;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #44d;
+  
+}
+
+
+.bright {
+    color: #3dd;
+}
+.nav1{
+  display: flex;
+}
+.cor{
+  width: 50px;
+  height: 50px;
+}
+.cor{
+  width: 50px;
+  height: 50px;
+}
+.m1{
+  margin: auto;
+}
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.loader::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid #000000;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+ 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+</style>
+<body  class="light-theme" oncontextmenu="return false;" id="theme">
+  <div class="loader"></div>
+  
+  <nav class="nav1">
+    <div style="background-color: rgb(168, 168, 168); height: 5px; position: sticky; top: 0;"></div>
+    <div class="polosa" id="scrollProgress"></div>
+    
+  
+    <p style="padding-left: 10px; font-size: larger; padding-top: 10px; padding-right: 10px;" id="un">Pesik</p>
+    <img src="emb.jpg" alt="" style="height: 50px;width: 50px; padding-left: auto; border-radius: 30px;">
+    <ul style="margin: auto;">
+      <a id="c1"><li>DogShop</li></a>
+      <a id="c2"><li>Корма</li></a>
+      <a id="c3"><li>Одежда, аксессуары</li></a>
+      <a id="c4"><li>Средства по уходу</li></a>
+    </ul>
+    
+    <ul>
+      <button id="btnChangeTheme" style="margin: auto;">Сменить цветовую тему</button>
+
+      <div style="display: flex;"> 
+        <h1 id="corcount"></h1>
+        
+          <img src="https://i.pinimg.com/736x/8b/8d/98/8b8d98e28309855b36aea06fead63e80.jpg" alt="" class="cor1" style="height: 60px;width: 60px; border-radius: 30px;">
+        
+      </div>
+    </ul>
+  </nav>
+
+  <header>
+ 
+  </header>
+
+  <main class="main">
+      <div style="width: auto; height: 100px; background-color: #fff; margin: auto; text-align: center;" class="divv">
+        <h2>Your name</h2>
+        <input type="text" id="userNameField" style="border-radius: 15px;" >
+        <button id="btnApplyProfileChngs" style="background-color: rgb(150, 202, 248); border-radius: 5px;">Авторизоваться</button>
+
+      </div>
+    <div>
+      
+    </div>
+    <div style="display: flex;">
+      <h1 style="text-align: center; padding-left: 150px; padding-top: 50px;">DogShop</h1>
+    
+      <img alt=""  src="https://img.freepik.com/premium-photo/cute-dog-cartoon-vector-icon-illustration_780593-3060.jpg" style="border-radius: 40px;">
+    </div>
+    <H3>DodShop – ваш лучший друг в мире товаров для собак!</H3>
+
+      <p>Добро пожаловать в DodShop – магазин, где забота о ваших питомцах стоит на первом месте! Мы предлагаем широкий ассортимент качественных товаров как для четвероногих друзей, так и для их владельцев.
+      </p>
+      <p>Что мы предлагаем:</p>
+      <ul>
+        <li>Корма премиум-класса: Только лучшие бренды с натуральными ингредиентами. Ваша собака будет чувствовать себя бодрой и здоровой каждый день!</li>
+        <li>Одежда и аксессуары: От стильных комбинезонов до модных ошейников – все, чтобы ваш питомец выглядел великолепно в любое время года.
+          Игрушки и развлечения: Забавные мячики, интерактивные игрушки и многое другое – обеспечим вашего любимца часами веселья!</li>
+        <li>Средства по уходу: Шампуни, кондиционеры, щетки и другие товары для поддержания красоты и здоровья шерсти вашей собаки.</li>
+        <li>И многое другое...</li>
+      </ul>
+
+    
+    <h1>Корма</h1>
+    <div>
+      <div class="m1" style="margin: auto; display: block;padding-left: 80px;">
+        <button style="width: 210pxx; height: 200px; background-color: #fff; border-radius: 15px;" class="corb">
+          <img style="width: 180px; height:160px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj86Bqe9z8uHE7g1uI2e70LFPLXvW2-F3NTQ&s" alt="">
+          <p>Корм "Гав" сухой 2кг || 1990 руб</p>
+        </button>
+       
+        <button style="width:210px; height: 200px; background-color: #fff; border-radius: 15px; " class="corb">
+          <img style="width: 180px; height:160px;" src="https://darsikorm.ru/loads/catalogue/big/korm_dlja_sobak_indejka_10kg.jpg" alt="">
+          <p>Корм "Dar" сухой 5кг|| 4999 руб</p>
+        </button>
+        <button style="width: 210px; height: 200px; background-color: #fff; border-radius: 15px;" class="corb">
+          <img style="width: 180px; height:160px;" src="https://cdn.kotmatros.ru/wa-data/public/shop/products/21/46/94621/images/184402/184402.970.jpg" alt="">
+          <p>Корм "Brit" сухой || 4590 руб</p>
+        </button>
+      </div>
+
+
+    <h1>Одежда и аксессуары </h1>
+    <div class="m1" style="margin: auto; display: block;padding-left: 80px;">
+      <button style="width: 210px; height: 200px; background-color: #fff; border-radius: 15px;" class="corb">
+        <img style="width: 180px; height:160px;" src="https://static.insales-cdn.com/images/products/1/5616/278812144/b25024d14d906a974ea21b36d1ffe2da.jpg" alt="">
+        <p>Курточка "Gussi" || 4599 руб</p>
+      </button>
+     
+      <button style="width: 210px; height: 200px; background-color: #fff; border-radius: 15px; " class="corb">
+        <img style="width: 180px; height:160px;" src="https://shop-cdn1-2.vigbo.tech/shops/7536/products/20816494/images/2-a46d1ebf2ef625a9f19d58aaff55e221.jpg" alt="">
+        <p>Ошейник "Vesrache" || 790 руб</p>
+      </button>
+      <button style="width: 210px; height: 200px; background-color: #fff; border-radius: 15px;" class="corb">
+        <img style="width: 180px; height:160px;" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEhARDxANDw8QDg4PDg0NDw8NDQ0PFREWFhURFRYZHSggGBolGxUVITEhMTUrLi4uFx8zODMtNygtLi4BCgoKDg0OGhAQGi0lHyUrLS0tKy0vLS0tLSstKy8rLS0tLSsuLTctLS0rLTUtLS0tLSstLS0tLS0tLSstLSstLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAgQDBQYBB//EADUQAAIBAgMFBQgCAQUAAAAAAAABAgMRBBIhBTFBUXEGMmGBkRMiQlKhscHRI2LhBzNykqL/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQMEAgX/xAAkEQEBAQACAgICAgMBAAAAAAAAAQIDESExBEESMhNRImHhFP/aAAwDAQACEQMRAD8A+4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK+NxSpRvvb0iubNFiMVKes234fCuiK98kyu4+G78/TpEz05K9+FvuZYYia3Skukmczl/07vx+vVdQDmljanzz9WZIbSqr4r9UmdfyRzeDToQaejth/FFPxjoy9Rx9OXxWfKWh1NSq7jU+loAHTgAAAAAAAAAAAAAAAAAAAAAAAAAAGn7Qp/xtbryT87fpmoii1tXE+0qP5Y3jH8sroybsurXo8UsxJQHp4cuw9PbADw9ueAntH4xnoYucO7Jpct8fQ2eG2tF6TWV81rE0oO88lirXFmurjJNXTTXNao9OYw+KnTd4u3NcH5G4we04z0l7sv/AC+jLs7lZt8VyvgA7VAAAAAADHWrxh3pJdd76I8oYiNS7i7236NfcjtPV67ZQASgAAAAAAAAK20K/s6cpcbWj/yeiLJpO0VbuQ6zf2X5Od3rPaziz+WpGoRNGNMncxvR6TR6QTPbgTQZ4me3CHlhY9AHh6wLgRB6e5fAnssXcFtOUNJXlH6robqjWjNXi019V1OWysyUKsoO8W0/v1Lcclntn5OGXzHUg1+E2nGVlP3Zc/hf6Lymt91bndWL5ZWW5s9k5qKbbSS3tmoxO1JSdqfur5n3n+jBtLGurLLHuRf/AGfMq3sUb5fqNXFweO9I16mvGUnvb1Z0Oy6GSnG++XvS6vh6HNxXHi951lKNoxXKKX0HD5tp8nxmRMAGhjAAAAAAAADltt1M1aXKKUfRfts6k4vEVM0py5yk/VlPNfHTV8Wf5WoKRLMYmeXMzasJkkzBGRNSB0zJkkzEpErkoZLhsimeXIBs8czyRXnIJkWPaEpzfBlXMWKbukDryxvESRmp11LqQnTuY6VHU57srq5lizmPbkJwd0ZEiyVXZEb2PZST/TJZTHKBHRKvbMwbqSUn3Iu7fzPkjoChseupU1Fd6GjX2ZfNXHmTPhg593WvIACxSAAAAAAAAjUej6P7HEJncNHCVNLrloUc/wBNnxPtKciGYr1KohVuZ2zpZTJKRgUiakBmUiakV7nsWBbTPUYISM8WEUaMFSBYuRaBFRmehVS0emuj4dD10zHUw900ErkbHuSzuvM19GlOPEu0r8XcgrMLEVImmjpw9ISR6eMIe4Wu6U1Jbt0lzjxOnTucnI3+xW3Rhmd376vyWd2XkrIv4b9M3yc+qvAAvZAAAAAAAAHkmkm3okrt8kcPiLSlJrc5Sa6N6HbVqSnGUXe0k4u2jszjHTs2uTa9GUc/02fE68tPj42WhtOxOChiYV3VTdpQhGzacdG219PQq46ncv8A+n88s8RT+ZQqR8m4v7xKOL9+q2c/f8Ns9/8AXu09jVKF5L+Sn86WsV/Zfk10Zn0U0m0+z0Kl5UrU58rfxyfTh5F+uL+mTj+T9acvnJQmRxuDq0HapBx5S3xl0ZgjMossa5ZZ3GxiyakV6MjOiBNyIqZFkLgWIyJplZSMkZgZrkoswqRkjIITbOH7OdvHiq6pTjTTnia1GNGKkqtKMb5W3xdk29258juLlTD7Jw1OrKvChQhXnfPXjThGrO++8kru/wBTqWfbjUt66q8mRZIJEJY2jbbArd+HL3l9n+DVyYw2JdOSkuG9c1xR3i9Vxy5/LNjqwRp1FJKUXdNXTRI1vNAAAAAAAADV47Y6m3ODyyerTV4t8/A2gIuZfbrO7m9xzFXs/Wlxpdc0v0XthbCjhXKblnnJZb2soq92lz1S9Dcg4zxZl7Wa+RvU/G3wAAsUo1KakmpJST3qSTT8jRY7sxTld0m6cvld5Qf5RvwRcy+3Wd6z6rh6uAqUHlqJK/daaaklxQUTbdpHepBcqd/WT/RrYmPc6vUelx6usy1WquSMcaparbjU1KlpNeZX2vk7XfaE4zKKqGT2mhKLFyMzLCZShUMsZkoXoyJplSFQzRqBzVhM8kyKkRkyUPW7nsaaHiYc9whscFj3Sdt8G9Y8V4o6CnNSSlF3TV0zjJzfA6nZNJwpQUt7vK3K7vY0cWrfDJ8jEnlcABcygAAAAAAAAAAAAAAAOd7SL+SD/o16S/ya2JsO0U71Yx+Wnr1bf6KEUY+T9q9Ph/SMdbcbWn2aoVaVNyzRq5FJ1IOz11s09OJrasbo6jZFdVKUHxUVCS5Sjo/35k8Mlt7R8nes5lz/AG5nE9lKsf8AbnCouT/jl+UazE7OrU+/TmlztePqtD6KC68OWfPy9z35fMoVLGWFRczv8TgKNXv04S8XFKXrvNNiuydOWtOc4eElnj+GV3hv0uz8rN9+HOOb4Hnt2uZsq/ZnEQ1g6dRck3GXo9Pqa/LKLcZxcZLfGSs0V3Nntdnedeq8htRJ2lddU7FyGJTs+D48CnOipcDiOz+GrRxWWNSpFOtOVWKk8kldttx3efiR27/GX0+kVHmVuFuBmwWz6k+5F2+Z6R9Tadn8HF0884qTcnlcleyWn3ubouxxd+axcnyPxtzGrwexoxs5vO9+XdBP8m0AL5mT0y61dXugAJcgAAAAAAAAAAAAAAANTtfZftL1YZvaqKWVNZZpPx42NM6E1vhUXWEkdeCvXFNeV+OfWZ05JYactIxk292jtfxZvNj4GdFSzuN5ZXlg24pq93ql4ehsQM8Uzezk59bnQACxQAAAa7bOzVXjdJe1ivcluv8A1fgbEEWdzqpzq5vccDGLTaaaadmno0+RPA7Njnfs4L2lR6vw4vwR1+L2ZSqvNOPvfNFuMn1tvMuFwlOkrQilfe9XJ+bKP4fLb/65+PrylhqKpxjBbopLrzZlANDDb2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//2Q==" alt="">
+        <p>Мини-пиг игрушка || 459 руб</p>
+      </button>
+    </div>
+    <h1>Средства по уходу</h1>
+    <div class="m1" style="margin: auto; display: block;padding-left: 80px;">
+      <button style="width: 210pxx; height: 200px; background-color: #fff; border-radius: 15px;" class="corb">
+        <img style="width: 180px; height:160px;" src="https://ctokormov.ru/netcat_files/multifile/2353/100-4a262ed44fb711e9ba8ae0d55ebdf685_4d2c5f6807a511edbadee0d55ebdf685.jpg" alt="">
+        <p>Шампунь "Wonder 12" || 599 руб </p>
+      </button>
+     
+      <button style="width:210px; height: 200px; background-color: #fff; border-radius: 15px; " class="corb" id="click">
+        <img style="width: 180px; height:160px;" src="https://ir.ozone.ru/s3/multimedia-o/c1000/6859048992.jpg" alt="">
+        <p>Щетка для собаки || 499 руб</p>
+      </button>
+      <button style="width: 210px; height: 200px; background-color: #fff; border-radius: 15px;" class="corb">
+        <img style="width: 180px; height:160px;" src="https://ae04.alicdn.com/kf/S465016ec85de4dac940386b4a0b898bcu.jpg_640x640.jpg" alt="">
+        <p>Щетка для зубов|| 290 руб</p>
+      </button>
+    </div>  
+    <div>
+      <h3>Рекламы нет, проект сознан для примера.</h3>
+    </div></main>
+  <footer id="btn">Up
+    
+  </footer>
+</div>
+  <script src="script.js">
+
+  </script>
+</body>
+</html>
